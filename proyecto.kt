@@ -45,6 +45,16 @@ fun promediogrupo(): Float {
     fun mostrarexamenes(){
         println(mayornota())
     }
+    fun mejornota(): String {
+        var notainicial = 0
+        for (i in 1 until contador)
+        if (notas[i] > notas[notainicial]){
+            notainicial = 0
+        }
+        return ("el estudiante con nota mas alta es  ${nombres[notainicial]} con una nota de ${"%.2f".format(notas[notainicial])}")
+    }
+
+
 }
 
 fun main() {
@@ -61,9 +71,9 @@ fun main() {
 
     val promedio = examen.promediogrupo()
     println("promedio del grupo: ${"%.2f".format(promedio)} ")
+    println(examen.mejornota())
 
 }
-
 
 
 
